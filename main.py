@@ -1,4 +1,4 @@
-from cgitb import text
+from quiz_brain import *
 from question_model import Question
 from data import question_data
 
@@ -10,3 +10,8 @@ for item in question_data:
     question = Question(item["text"],item["answer"])
     questionBank.append(question)
 
+#instancia um objeto da classe QuizBrain passando como parametro a lista de questoes
+quizBrain = QuizBrain(questionBank)
+
+#chama o metodo para imprimir a questao
+quizBrain.nextQuestion()
