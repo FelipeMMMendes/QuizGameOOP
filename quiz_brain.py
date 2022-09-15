@@ -5,6 +5,7 @@ class QuizBrain:
     def __init__(self,questList):
         self.questNumber = 0
         self.questList = questList
+        self.score = 0
 
     def still_has_questions(self):
         return self.questNumber < len(self.questList)
@@ -16,5 +17,18 @@ class QuizBrain:
     def nextQuestion(self):
         currentQuestion = self.questList[self.questNumber]
         self.questNumber += 1
-        input(f"Q.{self.questNumber}: {currentQuestion.text} (True/False): ")
+        userAnswer = input(f"Q.{self.questNumber}: {currentQuestion.text} (True/False): ")
+        self.checkAnswer(userAnswer,currentQuestion.answer)
+
+    def checkAnswer(self,UserAnswer,RightAnswer):
+        if UserAnswer.lower() == RightAnswer.lower():
+            print("You got it right!")
+            self.score += 1
+        else:
+            print("You got it wrong!")
+        print(f"The right answer was {RightAnswer}")    
+        print(f"Your current score is {self.score}/{self.questNumber}")
+                
+
+
 

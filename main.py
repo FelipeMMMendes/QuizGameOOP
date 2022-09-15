@@ -13,6 +13,12 @@ for item in question_data:
 #instancia um objeto da classe QuizBrain passando como parametro a lista de questoes
 quizBrain = QuizBrain(questionBank)
 
-while quizBrain.still_has_questions():
+#loop para continuar imprimindo questões até acabar e fica checando as respostas dos 
+while quizBrain.still_has_questions() == True:
     quizBrain.nextQuestion()
-#chama o metodo para imprimir a questao
+    print("\n")
+
+if quizBrain.still_has_questions() == False:
+    print("Congratulations! You've completed the quiz!")
+    print(f"Your final score was {quizBrain.score} / 12")    
+
