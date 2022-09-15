@@ -13,5 +13,6 @@ for item in question_data:
 #instancia um objeto da classe QuizBrain passando como parametro a lista de questoes
 quizBrain = QuizBrain(questionBank)
 
+while quizBrain.still_has_questions():
+    quizBrain.nextQuestion()
 #chama o metodo para imprimir a questao
-quizBrain.nextQuestion()
