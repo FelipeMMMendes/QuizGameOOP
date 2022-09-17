@@ -7,7 +7,7 @@ questionBank = []
 
 #roda nos dados e instancia um objeto para cada pergunta, resgatando o texto e a resposta dela 
 for item in question_data:
-    question = Question(item["text"],item["answer"])
+    question = Question(item["question"],item["correct_answer"])
     questionBank.append(question)
 
 #instancia um objeto da classe QuizBrain passando como parametro a lista de questoes
