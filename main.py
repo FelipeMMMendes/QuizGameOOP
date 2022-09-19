@@ -2,12 +2,13 @@ from quiz_brain import *
 from question_model import Question
 from data import question_data
 
-
 questionBank = []
 
 #roda nos dados e instancia um objeto para cada pergunta, resgatando o texto e a resposta dela 
 for item in question_data:
-    question = Question(item["text"],item["answer"])
+    question_text = item["question"]
+    question_answer = item["correct_answer"]
+    question = Question(question_text,question_answer)
     questionBank.append(question)
 
 #instancia um objeto da classe QuizBrain passando como parametro a lista de questoes
